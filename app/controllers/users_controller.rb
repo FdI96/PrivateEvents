@@ -12,7 +12,16 @@ class UsersController < ApplicationController
   end
 
   def in
+    @user = User.new
+  end
 
+  def onlick
+    @user = find(params[:id])
+    if @user.user_id.exist?
+      session[:user_id] = user_id
+    else
+      render :index
+    end
   end
 
   # GET /users/new
