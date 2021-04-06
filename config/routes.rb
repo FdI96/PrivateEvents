@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'events#index'
+  get 'user/signin', to: 'users#in'
 
   resources :users, only: [ :new, :create, :show ]
   resources :attendees
