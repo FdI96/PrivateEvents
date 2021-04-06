@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :users
+  root 'events#index'
+
+  resources :users, only: [ :new, :create, :show ]
   resources :attendees
   resources :events
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
